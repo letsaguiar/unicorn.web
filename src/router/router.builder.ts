@@ -1,16 +1,13 @@
 import { Router, RouterHandler } from "./router.interface";
 import { RouterMethod } from "./router.enum";
+import { ResponseBuilder } from "../response/response.builder";
 
 export class RouterBuilder {
 	private router: Router;
 
 	public constructor()
 	{
-		this.router = {
-			path: '/',
-			method: RouterMethod.GET,
-			handler: () => new Response('')
-		}
+		this.router = { handler: () => new ResponseBuilder().build() };
 	}
 
 	public setPath(path: string): this

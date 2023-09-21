@@ -4,9 +4,9 @@ export type RouterHandler = (req: Request) => Response;
 
 export interface Router {
 	
-	path: string;
+	path?: string;
 
-	method: RouterMethod;
+	method?: RouterMethod;
 
 	handler: RouterHandler;
 }

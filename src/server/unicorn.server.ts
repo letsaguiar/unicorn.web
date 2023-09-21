@@ -1,3 +1,4 @@
+import { NotFoundRouter } from "../router/default/not-fount.router";
 import { Router } from "../router/router.interface";
 
 export class UnicornServer {
@@ -21,7 +22,7 @@ export class UnicornServer {
 					if (url.pathname == router.path && req.method == router.method)
 						return router.handler(req);
 				}
-				return new Response('bun!');
+				return NotFoundRouter.handler(req);
 			}
 		})
 	}
