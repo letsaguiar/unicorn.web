@@ -7,6 +7,8 @@
     "lib": ["esnext"],
     "module": "esnext",
     "target": "esnext",
+	"experimentalDecorators": true,
+	"emitDecoratorMetadata": true,
 
     // if TS 5.x+
     "moduleResolution": "bundler",
