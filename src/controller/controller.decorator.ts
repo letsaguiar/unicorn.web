@@ -1,5 +1,6 @@
 import "reflect-metadata";
 import { Router, RouterHandler } from "../router/router.interface";
+import { RouterBuilder } from "../router/router.builder";
 
 export function Controller(path?: string)
 {
@@ -27,7 +28,14 @@ export function Controller(path?: string)
 					const path = Reflect.getMetadata("router:path", controller, router as string);
 					const method = Reflect.getMetadata("router:method", controller, router as string);
 					const handler = this[router] as RouterHandler;
-					this.routers.push({ path, method, handler });
+					
+					this.routers.push(
+						new RouterBuilder()
+							.setPath(path)
+							.setMethod(method)
+							.setHandler(handler)
+							.build()
+					);
 				}
 			}
   		};

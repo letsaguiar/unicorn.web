@@ -1,6 +1,6 @@
 import { RouterMethod } from "./router.enum";
 
-export type RouterHandler = (...args) => void;
+export type RouterHandler = (...args: any[]) => Response;
 
 export interface Router {
 	
