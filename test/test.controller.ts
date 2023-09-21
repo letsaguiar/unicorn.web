@@ -1,8 +1,10 @@
+import { Controller } from "../src/controller/controller.decorator";
 import { Get } from "../src/router/decorator/get.decorator";
 
+@Controller('controller')
 export class TestController {
 
-	@Get('foo')
-	public foo() {}
+	@Get('get')
+	public get() {}
 
 }

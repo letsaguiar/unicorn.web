@@ -6,7 +6,7 @@ describe('GetDecorator', () => {
 	const controller = new TestController();
 
 	test('should add path metadata', () => {
-		const path = Reflect.getMetadata("router:path", controller, 'foo');
-		expect(path).toEqual('foo');
+		const path = Reflect.getMetadata("router:path", controller, 'get');
+		expect(path).toEqual('get');
 	})
 });
