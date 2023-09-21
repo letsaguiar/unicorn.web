@@ -1,4 +1,4 @@
-import { Router } from "../router/router.entity";
+import { Router } from "../router/router.interface";
 
 export class UnicornServer {
 	public Routers: Router[];

@@ -1,4 +1,4 @@
-import { Router } from "./src/router/router.entity";
+import { Router } from "./src/router/router.interface";
 import { RouterMethod } from "./src/router/router.enum";
 import { UnicornServer } from "./src/server/unicorn.server";
 
