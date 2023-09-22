@@ -33,9 +33,9 @@ export class UnicornServer {
 
 				for (const router of routers)
 					if (url.pathname == router.path && req.method == router.method)
-						return router.handle();
+						return router.handle(req);
 
-				return NotFoundRouter.handle();
+				return NotFoundRouter.handle(req);
 			}
 		});
 	}

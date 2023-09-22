@@ -1,5 +1,5 @@
 import { Router, RouterHandler } from "./router.entity";
-import { RouterMethod } from "./router.enum";
+import { RouterMethod, RouterParam } from "./router.enum";
 import { ResponseBuilder } from "../response/response.builder";
 import { ResponseStatus } from "../response/response.enum";
 
@@ -32,6 +32,12 @@ export class RouterBuilder {
 	public setSuccessStatus(status: ResponseStatus): this
 	{
 		this.router.successStatus = status;
+		return this;
+	}
+
+	public setParams(params: RouterParam[]): this
+	{
+		this.router.params = params;
 		return this;
 	}
 
