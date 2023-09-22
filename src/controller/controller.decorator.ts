@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { Router, RouterHandler } from "../router/router.interface";
+import { Router, RouterHandler } from "../router/router.entity";
 import { RouterBuilder } from "../router/router.builder";
 
 export function Controller(path?: string)
@@ -27,8 +27,8 @@ export function Controller(path?: string)
 				{
 					const path = Reflect.getMetadata("router:path", controller, router as string);
 					const method = Reflect.getMetadata("router:method", controller, router as string);
-					const handler = this[router] as RouterHandler;
 					const status = Reflect.getMetadata("router:success-status", controller, router as string);
+					const handler = this[router] as RouterHandler;
 					
 					this.routers.push(
 						new RouterBuilder()

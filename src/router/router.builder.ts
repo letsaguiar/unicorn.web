@@ -1,4 +1,4 @@
-import { Router, RouterHandler } from "./router.interface";
+import { Router, RouterHandler } from "./router.entity";
 import { RouterMethod } from "./router.enum";
 import { ResponseBuilder } from "../response/response.builder";
 import { ResponseStatus } from "../response/response.enum";
@@ -8,7 +8,7 @@ export class RouterBuilder {
 
 	public constructor()
 	{
-		this.router = { handler: () => new ResponseBuilder().build() };
+		this.router = new Router();
 	}
 
 	public setPath(path: string): this

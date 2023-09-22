@@ -1,4 +1,4 @@
-import { Router } from "../router/router.interface";
+import { Router } from "../router/router.entity";
 
 export interface Controller {
 	path: string;

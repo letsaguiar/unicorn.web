@@ -1,16 +1,8 @@
-import { ResponseBuilder } from "../../response/response.builder";
 import { ResponseStatus } from "../../response/response.enum";
-import { Router } from "../router.interface";
+import { RouterBuilder } from "../router.builder";
 
-export const NotFoundRouter: Router = {
+const NotFoundRouter = new RouterBuilder()
+	.setSuccessStatus(ResponseStatus.NOT_FOUND)
+	.build();
 
-	handler()
-	{
-		return new ResponseBuilder()
-			.setHeader('Connection', 'close')
-			.setHeader('Date', new Date().toUTCString())
-			.setStatus(ResponseStatus.NOT_FOUND)
-			.build();
-	}
-
-}
+export { NotFoundRouter }
