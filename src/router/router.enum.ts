@@ -5,3 +5,10 @@ export enum RouterMethod {
 	PATCH = 'PATCH',
 	DELETE = 'DELETE',
 }
+
+export enum RouterParam {
+	QUERY = 'QUERY',
+	BODY = 'BODY',
+	HEADER = 'HEADER',
+	PARAM = 'PARAM',
+}

@@ -16,7 +16,7 @@ describe('ControllerDecorator', () => {
 
 		test('should load routers', () => {
 			controller.loadRouters();
-			expect(controller.routers).toHaveLength(6);
+			expect(controller.routers).toHaveLength(7);
 		});
 	});
 });
