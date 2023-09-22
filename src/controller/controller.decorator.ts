@@ -28,12 +28,14 @@ export function Controller(path?: string)
 					const path = Reflect.getMetadata("router:path", controller, router as string);
 					const method = Reflect.getMetadata("router:method", controller, router as string);
 					const handler = this[router] as RouterHandler;
+					const status = Reflect.getMetadata("router:success-status", controller, router as string);
 					
 					this.routers.push(
 						new RouterBuilder()
 							.setPath(path)
 							.setMethod(method)
 							.setHandler(handler)
+							.setSuccessStatus(status)
 							.build()
 					);
 				}

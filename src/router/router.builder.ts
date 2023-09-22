@@ -1,6 +1,7 @@
 import { Router, RouterHandler } from "./router.interface";
 import { RouterMethod } from "./router.enum";
 import { ResponseBuilder } from "../response/response.builder";
+import { ResponseStatus } from "../response/response.enum";
 
 export class RouterBuilder {
 	private router: Router;
@@ -25,6 +26,12 @@ export class RouterBuilder {
 	public setHandler(handler: RouterHandler): this
 	{
 		this.router.handler = handler;
+		return this;
+	}
+
+	public setSuccessStatus(status: ResponseStatus): this
+	{
+		this.router.successStatus = status;
 		return this;
 	}
 
