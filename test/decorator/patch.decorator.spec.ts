@@ -3,16 +3,16 @@ import "reflect-metadata";
 import { TestController } from "../test.controller";
 import { RouterMethod } from "../../src/router/router.enum";
 
-describe('GetDecorator', () => {
+describe('PatchDecorator', () => {
 	const controller = new TestController();
 
 	test('should add path metadata', () => {
-		const path = Reflect.getMetadata("router:path", controller, 'get');
-		expect(path).toEqual('get');
+		const path = Reflect.getMetadata("router:path", controller, 'patch');
+		expect(path).toEqual('patch');
 	})
 
 	test('should add method metada', () => {
-		const method = Reflect.getMetadata("router:method", controller, 'get');
-		expect(method).toEqual(RouterMethod.GET);
+		const method = Reflect.getMetadata("router:method", controller, 'patch');
+		expect(method).toEqual(RouterMethod.PATCH);
 	})
 });

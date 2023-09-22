@@ -18,7 +18,11 @@ describe('ControllerDecorator', () => {
 		test('should load routers', () => {
 			controller.loadRouters();
 			expect(controller.routers).toEqual([
-				{ path: 'get', method: RouterMethod.GET, handler: controller['get'] }
+				{ path: 'get', method: RouterMethod.GET, handler: controller['get'] },
+				{ path: 'post', method: RouterMethod.POST, handler: controller['post'] },
+				{ path: 'put', method: RouterMethod.PUT, handler: controller['put'] },
+				{ path: 'patch', method: RouterMethod.PATCH, handler: controller['patch'] },
+				{ path: 'delete', method: RouterMethod.DELETE, handler: controller['delete'] },
 			])
 		});
 	});

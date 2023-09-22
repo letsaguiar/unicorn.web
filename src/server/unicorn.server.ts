@@ -37,7 +37,6 @@ export class UnicornServer {
 				}
 				return NotFoundRouter.handler(req);
 			}
-		})
+		});
 	}
-
 }
