@@ -1,3 +1,4 @@
+import { Context } from "../context/context.entity";
 import { HttpMethod } from "../http/http.enum";
 import { NotFoundRouter } from "../router/defaults/not-found.router";
 import { Router } from "../router/router.entity";
@@ -40,11 +41,14 @@ export class UnicornServer {
 	{
 		Bun.serve({
 			port,
-			fetch: (request: Request) => {
+			fetch: async (request: Request) => {
+				const ctx = await Context.build(request);
+
 				for (const router of this._routers)
 					if (router.match(request))
-						return (router.handler());
-				return NotFoundRouter.handler();
+						return (router.handler(ctx));
+
+				return NotFoundRouter.handler(ctx);
 			}
 		})
 	}
