@@ -42,13 +42,15 @@ export class UnicornServer {
 		Bun.serve({
 			port,
 			fetch: async (request: Request) => {
-				const ctx = await Context.build(request);
 
 				for (const router of this._routers)
 					if (router.match(request))
+					{
+						const ctx = await Context.build(request, router);
 						return (router.handler(ctx));
+					}
 
-				return NotFoundRouter.handler(ctx);
+				return NotFoundRouter.handler(new Context());
 			}
 		})
 	}
