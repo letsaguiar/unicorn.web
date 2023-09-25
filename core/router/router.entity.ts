@@ -22,7 +22,7 @@ export class Router {
 		if (path.length === 0)
 			return (new RegExp('.*'));
 
-		const pattern = path.replace(/\//g, '\\/').replace(/:\w+/g, '(\\w+)');
+		const pattern = path.replace(/\//g, '\\/').replace(/:\w+/g, '(\\S+)');
 		return (new RegExp(`^${pattern}$`));
 	}
 

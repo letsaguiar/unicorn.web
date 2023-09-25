@@ -39,7 +39,7 @@ export class Context {
 	{
 		const path = new URL(request.url).pathname;
 		const keyRegex = new RegExp(
-			router.path.replace(/\//g, '\\/').replace(/:\w+/g, ':(\\w+)'
+			router.path.replace(/\//g, '\\/').replace(/:\w+/g, ':(\\S+)'
 		));
 
 		const keys = keyRegex.exec(router.path) || [];
