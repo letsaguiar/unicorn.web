@@ -1,3 +1,3 @@
 import { Context } from "../context/context.entity";
 
-export type RouterHandler = (ctx: Context) => Response;
+export type RouterHandler = (ctx: Context) => Response | Promise<Response>;

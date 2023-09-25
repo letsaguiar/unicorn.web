@@ -50,7 +50,7 @@ export class UnicornServer {
 						return (router.handler(ctx));
 					}
 
-				return NotFoundRouter.handler(new Context());
+				return (NotFoundRouter.handler(new Context()));
 			}
 		})
 	}
