@@ -22,7 +22,7 @@ Unicorn-web is a bun based web framework which makes the process of creating a w
 ### 🔧 Installation
 
 ```sh
-bun add unicorn.web
+bun add @unicorn.web/core
 ```
 
 ### 🤖 Building your first unicorn.app
@@ -31,27 +31,27 @@ Let's create your first unicorn.app
 
 1. Open your `index.ts` and creates a new server instance:
 ```ts
-import { UnicornServer } from 'unicorn.web'
+import { UnicornServer } from '@unicorn.web/core'
 
 const server = new UnicornServer();
 ```
 
 2. Add some routers to fetch requests:
 ```ts
-import { UnicornServer } from 'unicorn.web'
+import { UnicornServer } from '@unicorn.web/core'
 
 const server = new UnicornServer();
-server.get('foo', () => new Response('foo'));
-server.post('boo', (ctx) => new Response(`Hi, ${ctx.body.name}`));
+server.get('/foo', () => new Response('foo'));
+server.post('/boo', (ctx) => new Response(`Hi, ${ctx.body.name}`));
 ```
 
 3. Serve the application in a port of your choice:
 ```ts
-import { UnicornServer } from 'unicorn.web'
+import { UnicornServer } from '@unicorn.web/core'
 
 const server = new UnicornServer();
-server.get('foo', () => new Response('foo'));
-server.post('boo', (ctx) => new Response(`Hi, ${ctx.body.name}`));
+server.get('/foo', () => new Response('foo'));
+server.post('/boo', (ctx) => new Response(`Hi, ${ctx.body.name}`));
 server.serve(3000);
 ```
 

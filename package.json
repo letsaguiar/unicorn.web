@@ -1,5 +1,5 @@
 {
-  "name": "unicorn-web",
+  "name": "@unicorn.web/core",
   "version": "0.0.0",
   "description": "The Bun powered web framework",
   "license": "MIT",
@@ -7,12 +7,16 @@
 	"type": "git",
 	"url": "https://github.com/letsaguiar/unicorn-web"
   },
-  "module": "index.ts",
+  "module": "./core/index.ts",
   "type": "module",
   "devDependencies": {
     "bun-types": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "files": [
+	"./core/index.ts",
+	"./core/*/**"
+  ]
 }
